@@ -1,17 +1,17 @@
 // ==UserScript==
- // @name         r/place Alliance of New York Institutions bot
- // @namespace    http://tampermonkey.net/
- // @version      1.0
- // @description  place tile bot
- // @author       Thanks Jared.
- // @match        https://hot-potato.reddit.com/embed*
- // @updateURL    https://gist.github.com/Alliance-of-New-York/0cd5ba86762b88d649218d92afc7a3cf/raw/placetesla.user.js
- // @downloadURL  https://gist.github.com/Alliance-of-New-York/0cd5ba86762b88d649218d92afc7a3cf/raw/placetesla.user.js
- // @grant        GM_xmlhttpRequest
- // @connect      raw.githubusercontent.com
- // ==/UserScript==
+// @name         r/place Alliance of New York Institutions bot
+// @namespace    http://tampermonkey.net/
+// @version      1.0
+// @description  place tile bot
+// @author       Thanks Jared.
+// @match        https://hot-potato.reddit.com/embed*
+// @updateURL    https://raw.githubusercontent.com/Felixnightshade/ANYI-Place-Bot/main/bot.js
+// @downloadURL  https://raw.githubusercontent.com/Felixnightshade/ANYI-Place-Bot/main/bot.js
+// @grant        GM_xmlhttpRequest
+// @connect      raw.githubusercontent.com
+// ==/UserScript==
 
-const UPDATEURL = "https://gist.github.com/Alliance-of-New-York/0cd5ba86762b88d649218d92afc7a3cf";
+const UPDATEURL = "https://raw.githubusercontent.com/Felixnightshade/ANYI-Place-Bot/main/bot.js";
 
  (function () {
     "use strict";
@@ -19,14 +19,7 @@ const UPDATEURL = "https://gist.github.com/Alliance-of-New-York/0cd5ba86762b88d6
     async function runScript(theCanvas) {
         const placeApi = getPlaceApi(theCanvas);
 
-        // console.log(placeApi.getPixel(616,948));
-        // await placeApi.setPixel(616,948, "#000000");
-        // console.log(placeApi.getPixel(616,948));
-
-        var ata_template = [
-            [18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 23, 23, 23, 23, 23, 23, 23, 23, 23, 12, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27,],
-            [18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18],
-            [18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18]];
+        var ata_template = [18];
 
         let newDiv = document.createElement('div');
         newDiv.innerHTML = "bot v4.0 <a target='_blank' href=" + UPDATEURL + ">click here</a> and click \"raw\" to update bot. please update bot every hour!";
