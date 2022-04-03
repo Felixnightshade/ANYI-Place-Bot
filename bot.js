@@ -23,8 +23,9 @@
 
         var ata_template = overlayMatrix;
 
+/*
         let newDiv = document.createElement('div');
-        newDiv.innerHTML = "bot v4.0 <a target='_blank' href=" + updateURL + ">click here</a> and click \"raw\" to update bot. please update bot every hour!";
+        newDiv.innerHTML = "<a target='_blank' href=" + updateURL + ">click here</a> and click \"raw\" to update bot.";
         document.body.prepend(newDiv);
         newDiv.style.position = "absolute";
         newDiv.style.backgroundColor = "red";
@@ -32,7 +33,7 @@
         newDiv.style.height = "25%";
         newDiv.style.color = "white";
         newDiv.style["z-index"] = "9999";
-
+*/
         let xStart = leftStart;
         let yStart = topStart;
         let xEnd = xStart + ata_template[0].length - 1;
@@ -49,12 +50,10 @@
                         var y_set = ata_template[y-yStart];
                         var pixel_color = y_set[x-xStart];
                         var pixel_color_index = templateColorMap[pixel_color];
-                        if (!pixel_color_index) continue;
-
                         console.log('Looking at ', selectedPixel);
                         console.log('Primed ', pixel_color_index);
 
-                        if (selectedColorMap[selectedPixel] !== pixel_color_index)
+                        if ((selectedColorMap[selectedPixel] !== pixel_color_index) && (pixel_color_index))
                         {
                             await placeApi.setPixel(x, y, pixel_color_index);
                             console.log("set pixel", x, ",", y);
@@ -180,11 +179,6 @@
             "#000000",
             "#000000",
             "#000000",
-            "",
-            "",
-            "#ffffff",
-            "#ffffff",
-            "#ffffff",
           ],
           [
             "#000000",
@@ -5008,30 +5002,30 @@
 
     const templateColorMap = {
     //modified hex for spreadsheet
-      "#BE0039": 1,
-      "#FF4500": 2,
+      "#be0039": 1,
+      "#ff4500": 2,
       "#ffa800": 3,
-      "#FFD635": 4,
+      "#ffd635": 4,
       "#17774d": 6,
-      "#00CC78": 7,
+      "#00cc78": 7,
       "#7eed56": 8,
-      "#00756F": 9,
-      "#009EAA": 10,
+      "#00756f": 9,
+      "#009eaa": 10,
       "#2450a4": 12,
       "#3690ea": 13,
       "#51e9f4": 14,
-      "#493AC1": 15,
-      "#6A5CFF": 16,
+      "#493ac1": 15,
+      "#6a5cff": 16,
       "#932dca": 18,
-      "#B44AC0": 19,
+      "#b44ac0": 19,
       "#d11869": 22,
       "#f87ea3": 23,
       "#6f4917": 24,
-      "#9C6926": 25,
+      "#9c6926": 25,
       "#000000": 27,
       "#999999": 29,
       "#d9d9d9": 30,
-      "#FFFFFF": 31,
+      "#ffffff": 31,
     };
 
     const isReadyInterval = setInterval(() => {
