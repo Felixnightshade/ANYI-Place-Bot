@@ -48,8 +48,8 @@
 
                         var y_set = ata_template[y-yStart];
                         var pixel_color = y_set[x-xStart];
-                        if (!pixel_color) continue;
                         var pixel_color_index = templateColorMap[pixel_color];
+                        if (!pixel_color_index) continue;
 
                         console.log('Looking at ', selectedPixel);
                         console.log('Primed ', pixel_color_index);
