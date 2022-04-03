@@ -16,9 +16,9 @@ for item in myl:
     outp.append([])
     for itemi in item.find_all("td"):
         try:
-            outp[len(outp)-1].append(itemi["class"][0])
+            outp[len(outp) - 1].append(itemi["class"][0])
         except:
-           outp[len(outp)-1].append("ncncncn") 
+            outp[len(outp) - 1].append("ncncncn")
 
 # remove borders
 for i in range(3):
@@ -30,11 +30,18 @@ for i in range(len(outp)):
 
 # css parsing!
 from json import loads
+
 styledata = soup.find_all("style")[0].text.split(".ritz .waffle .")
 correlation = {}
 for item in styledata:
     try:
-        correlation[item.split('{',1)[0]] = loads(('{"'+item.split('{',1)[-1]).replace(":", '":"').replace(";", '","').replace(',"}','}').replace('"," }', '"}'))["background-color"]
+        correlation[item.split("{", 1)[0]] = loads(
+            ('{"' + item.split("{", 1)[-1])
+            .replace(":", '":"')
+            .replace(";", '","')
+            .replace(',"}', "}")
+            .replace('"," }', '"}')
+        )["background-color"]
     except:
         pass
 
@@ -44,5 +51,5 @@ for line in outp:
     outs += "\t".join(line) + "\n"
 
 for item in correlation.keys():
-    outs = outs.replace(item+"\t", correlation[item]+"\t")
-    outs = outs.replace(item+"\n", correlation[item]+"\n")
+    outs = outs.replace(item + "\t", correlation[item] + "\t")
+    outs = outs.replace(item + "\n", correlation[item] + "\n")
