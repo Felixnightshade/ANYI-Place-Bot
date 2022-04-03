@@ -2,7 +2,9 @@
 
 Bot for r/place for the ANYI.
 
-To run, add the bot script to tampermonkey (https://www.tampermonkey.net/) and open up r/place. It will automatically place pixels for you.
+First you need to add the tampermonkey extension to your browser (https://www.tampermonkey.net/). 
+
+To run, add the bot script to tampermonkey and open up r/place. It will automatically place pixels for you.
 
 ## Contributing
 
