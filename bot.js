@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         r/place Alliance of New York Institutions bot
 // @namespace    http://tampermonkey.net/
-// @version      1.0.1
+// @version      1.0.2
 // @description  place tile bot
 // @author       Thanks Jared.
 // @match        https://hot-potato.reddit.com/embed*
@@ -68,7 +68,7 @@
 
     const updateURL = "https://raw.githubusercontent.com/Felixnightshade/ANYI-Place-Bot/main/bot.js";
 
-    const leftStart = 1008;
+    const leftStart = 1010;
     const topStart = 200;
 
     const overlayMatrix = [
