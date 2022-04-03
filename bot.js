@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         r/place Alliance of New York Institutions bot
 // @namespace    http://tampermonkey.net/
-// @version      1.0.2
+// @version      1.0.3
 // @description  place tile bot
 // @author       Thanks Jared.
 // @match        https://hot-potato.reddit.com/embed*
@@ -49,7 +49,7 @@
                         var y_set = ata_template[y-yStart]
                         var pixel_color_index = y_set[x-xStart]
 
-                        if (colorMap[selectedPixel] !== pixel_color_index)
+                        if (selectedPixel !== pixel_color_index)
                         {
                             await placeApi.setPixel(x, y, pixel_color_index);
                             console.log("set pixel", x, ",", y);
