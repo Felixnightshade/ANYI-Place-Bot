@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         r/place Alliance of New York Institutions bot
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.0.1
 // @description  place tile bot
 // @author       Thanks Jared.
 // @match        https://hot-potato.reddit.com/embed*
