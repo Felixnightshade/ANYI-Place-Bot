@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         r/place Alliance of New York Institutions bot
 // @namespace    http://tampermonkey.net/
-// @version      1.0.3
+// @version      1.0.4
 // @description  place tile bot
 // @author       Thanks Jared.
 // @match        https://hot-potato.reddit.com/embed*
@@ -46,10 +46,13 @@
                     for(let x = xStart; x <= xEnd; x++) {
                         var selectedPixel = placeApi.getPixel(x, y);
 
-                        var y_set = ata_template[y-yStart]
-                        var pixel_color_index = y_set[x-xStart]
+                        var y_set = ata_template[y-yStart];
+                        var pixel_color_index = templateColorMap[y_set[x-xStart]];
 
-                        if (selectedPixel !== pixel_color_index)
+                        console.log('Looking at ', selectedPixel);
+                        console.log('Primed ', pixel_color_index);
+
+                        if (selectedColorMap[selectedPixel] !== pixel_color_index)
                         {
                             await placeApi.setPixel(x, y, pixel_color_index);
                             console.log("set pixel", x, ",", y);
@@ -4982,7 +4985,26 @@
             "#000000",
           ]];  // The matrix is pretty scuffed rn
 
-    const colorMap = {
+    const selectedColorMap = {
+      "#FF450": 2,
+      "#FFA80": 3,
+      "#FFD635": 4,
+      "#0A368": 6,
+      "#7EED56": 8,
+      "#2450A4": 12,
+      "#3690EA": 13,
+      "#51E9F4": 14,
+      "#811E9F": 18,
+      "#B44AC0": 19,
+      "#FF99AA": 23,
+      "#9C6926": 25,
+      "#000": 27,
+      "#898D90": 29,
+      "#D4D7D9": 30,
+      "#FFFFFF": 31,
+    };
+
+    const templateColorMap = {
     //modified hex for spreadsheet
       "#BE0039": 1,
       "#FF4500": 2,
