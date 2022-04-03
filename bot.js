@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         r/place Alliance of New York Institutions bot
 // @namespace    http://tampermonkey.net/
-// @version      1.1.0
+// @version      1.1.1
 // @description  place tile bot
 // @author       Thanks Jared.
 // @match        https://hot-potato.reddit.com/embed*
@@ -47,7 +47,9 @@
                         var selectedPixel = placeApi.getPixel(x, y);
 
                         var y_set = ata_template[y-yStart];
-                        var pixel_color_index = templateColorMap[y_set[x-xStart]];
+                        var pixel_color = y_set[x-xStart];
+                        var pixel_color_index = templateColorMap[pixel_color];
+                        if (!pixel_color_index) continue;
 
                         console.log('Looking at ', selectedPixel);
                         console.log('Primed ', pixel_color_index);
