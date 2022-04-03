@@ -59,7 +59,7 @@
                             await placeApi.setPixel(x, y, pixel_color_index);
                             console.log("set pixel", x, ",", y);
                             await sleep(5 * 60 * 1000 + 2000 + getRandomNumber(0, 30000)); // 5 minutes and 2 seconds to 5 minutes and 32 seconds
-                            break;
+                            // break;  // Why tf was this in the logic???
                         }
                         else {
                             console.log('skipping', x, y);
