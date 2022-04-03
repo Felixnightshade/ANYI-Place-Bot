@@ -53,7 +53,7 @@
                         {
                             await placeApi.setPixel(x, y, pixel_color_index);
                             console.log("set pixel", x, ",", y);
-                            await sleep(5 * 60 * 1000 + 2000); // 5 minutes and 2 seconds
+                            await sleep(5 * 60 * 1000 + 2000 + getRandomNumber(0, 30000)); // 5 minutes and 2 seconds to 5 minutes and 32 seconds
                             break;
                         }
                         else {
@@ -4980,7 +4980,7 @@
             "#000000",
             "#000000",
             "#000000",
-          ],];  // The matrix is pretty scuffed rn
+          ]];  // The matrix is pretty scuffed rn
 
     const colorMap = {
     //modified hex for spreadsheet
@@ -5033,11 +5033,11 @@
             },
             setPixel: async (x, y, color) => {
                 theCanvas.dispatchEvent(createEvent("click-canvas", { x, y }));
-                await sleep(1000);
+                await sleep(1000 + getRandomNumber(0, 500));  // Just in case, wait 1 to 1.5 seconds
                 theCanvas.dispatchEvent(
                     createEvent("select-color", { color: color })
                 );
-                await sleep(1000);
+                await sleep(1000 + getRandomNumber(0, 500));  // Just in case, wait 1 to 1.5 seconds
                 theCanvas.dispatchEvent(createEvent("confirm-pixel"));
             },
         };
